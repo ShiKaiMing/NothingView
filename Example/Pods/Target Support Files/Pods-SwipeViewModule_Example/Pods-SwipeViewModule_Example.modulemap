@@ -1,0 +1,6 @@
+framework module Pods_SwipeViewModule_Example {
+  umbrella header "Pods-SwipeViewModule_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module SwipeViewModule {
+  umbrella header "SwipeViewModule-umbrella.h"
+
+  export *
+  module * { export * }
+}
