@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwipeViewModule'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = '侧滑弹窗'
 
 # This description is used to generate tags and improve search results.
@@ -30,8 +30,12 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'SwipeViewModule/Classes/**/*'
-  
+  s.source_files = 'SwipeViewModule/Classes/*'
+
+  s.subspec 'SwipeModel' do |ss|
+    ss.source_files = 'SwipeViewModule/Classes/SwipeModel/*.{h,m}'
+  end
+
   # s.resource_bundles = {
   #   'SwipeViewModule' => ['SwipeViewModule/Assets/*.png']
   # }

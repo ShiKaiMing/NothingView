@@ -427,4 +427,20 @@
  }
  */
 
+- (void)didSpreadInWithProtocol:(nonnull id<SwipeProtocol>)protocol { 
+    
+}
+
+- (void)didSpreadOutWithProtocol:(nonnull id<SwipeProtocol>)protocol { 
+    
+}
+
+- (void)willSpreadInWithProtocol:(nonnull id<SwipeProtocol>)protocol { 
+    
+}
+
+- (void)willSpreadOutWithProtocol:(nonnull id<SwipeProtocol>)protocol { 
+    
+}
+
 @end

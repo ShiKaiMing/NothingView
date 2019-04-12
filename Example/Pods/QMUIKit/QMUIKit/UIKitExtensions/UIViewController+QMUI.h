@@ -1,6 +1,6 @@
 /*****
  * Tencent is pleased to support the open source community by making QMUI_iOS available.
- * Copyright (C) 2016-2018 THL A29 Limited, a Tencent company. All rights reserved.
+ * Copyright (C) 2016-2019 THL A29 Limited, a Tencent company. All rights reserved.
  * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
  * http://opensource.org/licenses/MIT
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
@@ -15,6 +15,8 @@
 
 #import <UIKit/UIKit.h>
 #import "QMUICore.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 /// 在 App 的 rootViewController.view.frame.size 发生变化（例如横竖屏旋转，或者 iPad Split View 模式下调整大小）前发出通知，你可以通过 QMUIPrecedingAppSizeUserInfoKey 获取变化前的值（也即当前值），用 QMUIFollowingAppSizeUserInfoKey 获取变化后的值。
 extern NSNotificationName const QMUIAppSizeWillChangeNotification;
@@ -36,9 +38,6 @@ typedef NS_OPTIONS(NSUInteger, QMUIViewControllerVisibleState) {
     QMUIViewControllerVisible       = QMUIViewControllerWillAppear | QMUIViewControllerDidAppear,// 表示是否处于可视范围，判断时请用 & 运算，例如 qmui_visibleState & QMUIViewControllerVisible
 };
 
-/**
- *  @warning 这个 Category 里兼容了 iOS 8 下对 loadViewIfNeeded 方法的使用，所以 iOS 8 下也可以安全调用，建议搭配 BeginIgnoreAvailabilityWarning/EndIgnoreAvailabilityWarning 屏蔽 Xcode 的 warning。
- */
 @interface UIViewController (QMUI)
 
 /** 获取和自身处于同一个UINavigationController里的上一个UIViewController */
@@ -75,7 +74,7 @@ typedef NS_OPTIONS(NSUInteger, QMUIViewControllerVisibleState) {
 /**
  在当前 viewController 生命周期发生变化的时候调用
  */
-@property(nonatomic, copy) void (^qmui_visibleStateDidChangeBlock)(__kindof UIViewController *viewController, QMUIViewControllerVisibleState visibleState);
+@property(nullable, nonatomic, copy) void (^qmui_visibleStateDidChangeBlock)(__kindof UIViewController *viewController, QMUIViewControllerVisibleState visibleState);
 
 /**
  *  UINavigationBar 在 self.view 坐标系里的 maxY，一般用于 self.view.subviews 布局时参考用
@@ -150,3 +149,5 @@ typedef NS_OPTIONS(NSUInteger, QMUIViewControllerVisibleState) {
 + (nullable UIViewController *)visibleViewController;
 
 @end
+
+NS_ASSUME_NONNULL_END

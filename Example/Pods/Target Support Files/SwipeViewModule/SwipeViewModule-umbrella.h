@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "SwipeViewModule.h"
 #import "SwipeHeader.h"
 #import "SwipeViewController.h"
 

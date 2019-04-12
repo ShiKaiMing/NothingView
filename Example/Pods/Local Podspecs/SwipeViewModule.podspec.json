@@ -1,6 +1,6 @@
 {
   "name": "SwipeViewModule",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "summary": "侧滑弹窗",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/ShiKaiMing/SwipeViewModule",
@@ -13,12 +13,12 @@
   },
   "source": {
     "git": "https://github.com/ShiKaiMing/SwipeViewModule.git",
-    "tag": "0.1.0"
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "10.0"
   },
-  "source_files": "SwipeViewModule/Classes/**/*",
+  "source_files": "SwipeViewModule/Classes/*",
   "frameworks": "UIKit",
   "dependencies": {
     "QMUIKit": [
@@ -33,5 +33,11 @@
     "YYKit": [
 
     ]
-  }
+  },
+  "subspecs": [
+    {
+      "name": "SwipeModel",
+      "source_files": "SwipeViewModule/Classes/SwipeModel/*.{h,m}"
+    }
+  ]
 }
